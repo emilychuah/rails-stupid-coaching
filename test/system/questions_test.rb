@@ -9,6 +9,14 @@ class QuestionsTest < ApplicationSystemTestCase
     assert_selector "p", text: "Ask your coach anything"
   end
 
+  test "saying nothing makes the coach respond that he can't hear you" do
+    visit ask_url
+    fill_in "question", with: ""
+    click_on "Ask"
+
+    assert_text "I can't hear you!"
+  end
+
   test "saying Hello yields a grumpy response from the coach" do
     visit ask_url
     fill_in "question", with: "Hello"

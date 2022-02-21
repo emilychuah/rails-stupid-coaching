@@ -5,11 +5,14 @@ class QuestionsController < ApplicationController
   def ask; end
 
   def answer
-    if params[:question].include? '?'
-      @answer = 'Silly question, get dressed and go to work!'
-    elsif params[:question] == 'I am going to work'
+    @question = params[:question]
+    if @question.blank?
+      @answer = "I can't hear you!"
+    elsif @question =~ /i am going to work/i
       @answer = 'Great!'
-    elsif params[:question].is_a? String
+    elsif @question.ends_with?('?')
+      @answer = 'Silly question, get dressed and go to work!'
+    else
       @answer = "I don't care, get dressed and go to work!"
     end
   end
