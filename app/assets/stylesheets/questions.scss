@@ -1,0 +1,32 @@
+// Place all the styles related to the Questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$font-stack: Helvetica, sans-serif;
+$blue: rgb(86, 86, 253);
+$white: white;
+$yellow: lightyellow;
+
+body {
+  font-style: $font-stack;
+  padding-left: 10px;
+  width: 500px;
+}
+
+#submit-btn {
+  background-color: $blue;
+  color: $white;
+}
+
+#answer {
+  font-weight: bold;
+}
+
+#coach {
+  background-color: $yellow;
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+}
